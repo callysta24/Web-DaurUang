@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import GuestLayout from "@/Layouts/dump/GuestLayout";
 import InputError from "@/Components/dump/InputError";
 import InputLabel from "@/Components/dump/InputLabel";
 import PrimaryButton from "@/Components/dump/PrimaryButton";
 import TextInput from "@/Components/dump/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
+import GeneralLayout from "@/Layouts/GeneralLayout";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,10 +27,11 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
+        <GeneralLayout>
             <Head title="Register" />
+            <h1 className="text-3xl text-center font-bold m-8">Register</h1>
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className="w-[400px]">
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 
@@ -120,6 +121,6 @@ export default function Register() {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+        </GeneralLayout>
     );
 }
