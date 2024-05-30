@@ -3,6 +3,11 @@ import { IoMdArrowBack } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
 
 const ListKaca = () => {
+    const simpanData = (e) => {
+        e.preventDefault();
+        console.log("oke");
+    };
+
     return (
         <>
             <section class="px-2 pb-5 pt-16 bg-teal-700 md:px-0 ">
