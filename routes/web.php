@@ -52,4 +52,9 @@ Route::get('/blog', function () {
     return Inertia::render('Blog/Dashboard');
 })->name('Blog');
 
+// route admin list kaca
+Route::get('/kaca', function () {
+    return Inertia::render('AdminDashboard/ListKaca');
+})->name('ListKaca');
+
 require __DIR__ . '/auth.php';
