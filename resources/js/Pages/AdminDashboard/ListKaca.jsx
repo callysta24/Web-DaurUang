@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
+import ModalTambah from "@/Sections/AdminHome/ModalKaca/ModalTambah";
 
-const ListKaca = () => {
-    const simpanData = (e) => {
-        e.preventDefault();
-        console.log("oke");
-    };
+const ListKaca = ({ wastecategories }) => {
+    // const [isModalOpen, setModalOpen] = useState(false);
 
     return (
         <>
@@ -25,19 +23,11 @@ const ListKaca = () => {
                                     </button>
                                 </a>
                             </span>
-                            <h5 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                            <h5 className="text-2xl font-semibold tracking-tight text-white dark:text-white">
                                 List Kategori Kaca
                             </h5>
                             <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                                <a href="/admindashboard">
-                                    <button
-                                        type="button"
-                                        className="w-full focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:focus:ring-yellow-900 flex items-center justify-center"
-                                    >
-                                        <FaPlus className="mr-2" />
-                                        Tambah Barang
-                                    </button>
-                                </a>
+                                <ModalTambah />
                             </span>
                         </div>
                     </div>
@@ -69,76 +59,76 @@ const ListKaca = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                    <div class="flex">
-                                                        <div class="flex-shrink-0 w-10 h-10">
-                                                            <img
-                                                                class="w-full h-full rounded-full"
-                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                                                alt=""
-                                                            />
-                                                        </div>
-                                                        <div class="ml-3">
+                                            {wastecategories &&
+                                                wastecategories.map((item) => (
+                                                    <tr>
+                                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                            <div class="flex">
+                                                                <div class="flex-shrink-0 w-10 h-10">
+                                                                    <img
+                                                                        class="w-full h-full rounded-full"
+                                                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                                        alt=""
+                                                                    />
+                                                                </div>
+                                                                <div class="ml-3">
+                                                                    <p class="text-gray-900 whitespace-no-wrap">
+                                                                        Molly
+                                                                        Sanders
+                                                                    </p>
+                                                                    <p class="text-gray-600 whitespace-no-wrap">
+                                                                        Kepanjen
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                             <p class="text-gray-900 whitespace-no-wrap">
-                                                                Molly Sanders
+                                                                teh botol sosro
+                                                                {/* key={item.id} */}
                                                             </p>
-                                                            <p class="text-gray-600 whitespace-no-wrap">
-                                                                000004
+                                                        </td>
+                                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                                3
                                                             </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                    <p class="text-gray-900 whitespace-no-wrap">
-                                                        $20,000
-                                                    </p>
-                                                    <p class="text-gray-600 whitespace-no-wrap">
-                                                        USD
-                                                    </p>
-                                                </td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                    <p class="text-gray-900 whitespace-no-wrap">
-                                                        Sept 28, 2019
-                                                    </p>
-                                                    <p class="text-gray-600 whitespace-no-wrap">
-                                                        Due in 3 days
-                                                    </p>
-                                                </td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                                        <span
-                                                            aria-hidden
-                                                            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                                                        ></span>
-                                                        <span class="relative">
-                                                            Paid
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
-                                                    <a
-                                                        href="#"
-                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                                    >
-                                                        Detail
-                                                    </a>
-                                                    /
-                                                    <a
-                                                        href="#"
-                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                                    >
-                                                        Edit
-                                                    </a>
-                                                    /
-                                                    <a
-                                                        href="#"
-                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                                    >
-                                                        Delete
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                                        </td>
+                                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                            <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                                                <span
+                                                                    aria-hidden
+                                                                    class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                                                ></span>
+                                                                <span class="relative">
+                                                                    200
+                                                                </span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+                                                            <a
+                                                                href="#"
+                                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                            >
+                                                                Detail
+                                                            </a>
+                                                            /
+                                                            <a
+                                                                href="#"
+                                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                            >
+                                                                Edit
+                                                            </a>
+                                                            /
+                                                            <a
+                                                                href="#"
+                                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                            >
+                                                                Delete
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                ))}
                                         </tbody>
                                     </table>
                                 </div>

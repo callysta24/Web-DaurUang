@@ -22,14 +22,14 @@ function Navbar({ children }) {
                         </div>
                         <h1
                             // href="#"
-                            className="font-bold text-gray-500 hover:text-green-700 rounded-md px-2 py-2 t"
+                            className="font-bold text-gray-500 hover:text-green-700 rounded-md px-2 pt-3 text-center"
                             // aria-current="page"
                         >
                             Hola, {auth.user.name}
                         </h1>
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
+                                <div className="flex space-x-4 pt-4">
                                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 
                                     <Link
@@ -46,7 +46,7 @@ function Navbar({ children }) {
                                     >
                                         Admin Dash
                                     </Link>
-                                    <Link
+                                    {/* <Link
                                         href="/voucher"
                                         className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
                                         aria-current="page"
@@ -59,7 +59,7 @@ function Navbar({ children }) {
                                         aria-current="page"
                                     >
                                         Nasabah
-                                    </Link>
+                                    </Link> */}
                                     <a
                                         href="/admindashboard"
                                         aria-current="page"

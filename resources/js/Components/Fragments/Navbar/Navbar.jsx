@@ -21,7 +21,7 @@ function Navbar() {
                         </div>
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
+                                <div className="flex space-x-4 pt-4">
                                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                     <Link
                                         href="/dashboard"

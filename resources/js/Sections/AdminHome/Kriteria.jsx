@@ -8,7 +8,7 @@ const Kriteria = () => {
                 <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
                     <div className="title-kriteria">
                         <div class="text-center ">
-                            <p className="text-3xl textblack font-bold py-6">
+                            <p className="text-3xl text-white font-bold py-6">
                                 List Kriteria Sampah
                             </p>
                         </div>
