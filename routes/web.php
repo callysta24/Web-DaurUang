@@ -38,6 +38,13 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route::methodGet('/url', [memanggilFileController::class, 'function method yang dieksekusi'])->name('untuk redirect page')
-Route::get('/users', [UserController::class, 'index'])->name('user.index');
+
+// route contoh untuk use page id db
+// Route::get('/users', [UserController::class, 'index'])->name('user.index');
+
+// route admin dashboard
+Route::get('/admindashboard', function () {
+    return Inertia::render('AdminDashboard/Dashboard');
+})->name('AdminDashboard');
 
 require __DIR__ . '/auth.php';
