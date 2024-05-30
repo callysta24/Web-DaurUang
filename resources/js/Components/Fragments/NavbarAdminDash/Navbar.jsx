@@ -31,19 +31,26 @@ function Navbar() {
                                         Beranda
                                     </Link>
                                     <Link
-                                        href="/blog"
+                                        href="/admindashboard"
                                         className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
                                         aria-current="page"
                                     >
-                                        Blog Edukasi
+                                        Admin Dash
                                     </Link>
-                                    {/* <Link
-                                        href="/"
+                                    <Link
+                                        href="/voucher"
                                         className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
                                         aria-current="page"
                                     >
-                                        Tentang Kami
-                                    </Link> */}
+                                        Voucher
+                                    </Link>
+                                    <Link
+                                        href="/nasabah"
+                                        className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
+                                        aria-current="page"
+                                    >
+                                        Nasabah
+                                    </Link>
                                     <a
                                         href="/admindashboard"
                                         aria-current="page"
@@ -52,8 +59,8 @@ function Navbar() {
                                             type="button"
                                             class="focus:outline-none text-white bg-teal-800 hover:bg-teal-800 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-teal-800 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
                                         >
-                                            Admin Dash
-                                        </button>{" "}
+                                            Logout
+                                        </button>
                                     </a>
                                 </div>
                             </div>

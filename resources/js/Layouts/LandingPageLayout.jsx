@@ -1,5 +1,5 @@
 import FooterLanding from "@/Components/Fragments/FooterLandingPage/Footer";
-import Navbar from "@/Components/Fragments/Navbar";
+import Navbar from "@/Components/Fragments/Navbar/Navbar";
 import React from "react";
 
 const LandingPageLayout = ({ children }) => {

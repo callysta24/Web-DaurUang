@@ -4,7 +4,7 @@ import dropphoto from "@/Assets/img/drop 1.png";
 const Hero = () => {
     return (
         <>
-            <section class="px-2 py-32 bg-white md:px-0 bg-teal-700">
+            <section class="px-2 py-32 md:px-0 bg-teal-700">
                 <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
                     <div className="title-layanan">
                         <div class="text-center p-10">
