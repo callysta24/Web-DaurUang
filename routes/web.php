@@ -52,4 +52,9 @@ Route::get('/blog', function () {
     return Inertia::render('Blog/Dashboard');
 })->name('Blog');
 
+// route blog
+Route::get('/blogpage', function () {
+    return Inertia::render('Blog/BlogPage');
+})->name('BlogPage');
+
 require __DIR__ . '/auth.php';

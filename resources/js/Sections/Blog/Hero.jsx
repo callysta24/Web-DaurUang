@@ -1,5 +1,10 @@
 import React from "react";
-import dropphoto from "@/Assets/img/drop 1.png";
+import drop from "@/Assets/img/drop 1.png";
+import storage from "@/Assets/img/storage 1.png";
+import process from "@/Assets/img/process 1.png";
+import transfer from "@/Assets/img/transfer 1.png";
+import landfill from "@/Assets/img/landfill 1.png";
+
 
 const Hero = () => {
     return (
@@ -21,41 +26,41 @@ const Hero = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                                 <div className="flex flex-col items-center text-center p-6">
                                     <div className="max-w-sm rounded-lg shadow  h-auto flex-grow">
-                                        <img src={dropphoto} alt="logo" />
+                                        <img src={drop} alt="logo" />
                                         <p className="mb-3 font-bold text-white pt-3">
-                                            Waste Segregation by Clients
+                                        Pengumpulan sampah
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center text-center p-6">
                                     <div className="max-w-sm rounded-lg shadow  h-auto flex-grow">
-                                        <img src={dropphoto} alt="logo" />
+                                        <img src={storage} alt="logo" />
                                         <p className="mb-3 font-bold text-white pt-3">
-                                            Waste Segregation by Clients
+                                            Penyimpanan sementara
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center text-center p-6">
                                     <div className="max-w-sm rounded-lg shadow  h-auto flex-grow">
-                                        <img src={dropphoto} alt="logo" />
+                                        <img src={process} alt="logo" />
                                         <p className="mb-3 font-bold text-white pt-3">
-                                            Waste Segregation by Clients
+                                            Pemilahan dan pengolahan
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center text-center p-6">
                                     <div className="max-w-sm rounded-lg shadow  h-auto flex-grow">
-                                        <img src={dropphoto} alt="logo" />
+                                        <img src={transfer} alt="logo" />
                                         <p className="mb-3 font-bold text-white pt-3">
-                                            Waste Segregation by Clients
+                                            Pengangkutan ke fasilitas akhir
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center text-center p-6">
                                     <div className="max-w-sm rounded-lg shadow  h-auto flex-grow">
-                                        <img src={dropphoto} alt="logo" />
+                                        <img src={landfill} alt="logo" />
                                         <p className="mb-3 font-bold text-white pt-3">
-                                            Waste Segregation by Clients
+                                            Pembuangan di TPA
                                         </p>
                                     </div>
                                 </div>
