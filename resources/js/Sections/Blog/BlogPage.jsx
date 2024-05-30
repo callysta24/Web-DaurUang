@@ -4,11 +4,11 @@ const BlogPage = () => {
     return (
         <>
             <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
-                <div
+                {/* <div
                     class="bg-cover h-64 text-center overflow-hidden"
                     style="height: 450px; background-image: url('https://api.time.com/wp-content/uploads/2020/07/never-trumpers-2020-election-01.jpg?quality=85&w=1201&h=676&crop=1')"
                     title="Woman holding a mug"
-                ></div>
+                ></div> */}
                 <div class="max-w-2xl mx-auto">
                     <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
                         <div class="">
