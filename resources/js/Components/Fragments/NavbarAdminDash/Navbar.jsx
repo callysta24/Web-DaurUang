@@ -46,6 +46,13 @@ function Navbar({ children }) {
                                     >
                                         Admin Dash
                                     </Link>
+                                    <Link
+                                        href="/wastes"
+                                        className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
+                                        aria-current="page"
+                                    >
+                                        Ontest
+                                    </Link>
                                     {/* <Link
                                         href="/voucher"
                                         className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
