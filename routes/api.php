@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 // import
-use App\Http\Controllers\WasteCategoriesController;
+use App\Http\Controllers\WasteCategoryController;
+use App\Http\Controllers\WasteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,9 @@ use App\Http\Controllers\WasteCategoriesController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 // Route WC
-Route::get('wasteCategories', [WasteCategoriesController::class, 'index']);
-Route::post('wasteCategories', [WasteCategoriesController::class, 'store']);
+Route::get('waste-category', [WasteCategoryController::class, 'index']);
+Route::post('waste-category', [WasteCategoryController::class, 'store']);
+
+// Route WASTE
+Route::get('waste', [WasteController::class, 'index']);
