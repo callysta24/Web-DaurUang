@@ -53,8 +53,8 @@ Route::get('/blog', function () {
 })->name('Blog');
 
 // route blog
-Route::get('/blogpage', function () {
-    return Inertia::render('Blog/BlogPage');
-})->name('BlogPage');
+Route::get('/artikel', function () {
+    return Inertia::render('Blog/Artikel');
+})->name('Artikel');
 
 require __DIR__ . '/auth.php';

@@ -31,7 +31,7 @@ const BlogList = () => {
                                         sampah di sumbernya yang memisahkan sampah organik, anorganik, dan berbahaya.                                        </p>
 
                                         <a
-                                            href="/blogpage"
+                                            href="/artikel"
                                             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-600 rounded-lg hover:bg-orange-700 "
                                         >
                                             Baca Yuk
