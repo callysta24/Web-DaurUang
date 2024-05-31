@@ -7,6 +7,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\WasteController;
+use App\Http\Controllers\WasteCategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,9 +55,21 @@ Route::get('/blog', function () {
     return Inertia::render('Blog/Dashboard');
 })->name('Blog');
 
+
 // route blog
 Route::get('/artikel', function () {
     return Inertia::render('Blog/Artikel');
 })->name('Artikel');
+
+// route admin list kaca
+Route::get('/kaca', function () {
+    return Inertia::render('AdminDashboard/ListKaca');
+})->name('ListKaca');
+
+
+// route
+Route::resource('wastes', WasteController::class);
+Route::resource('waste-categories', WasteCategoryController::class);
+
 
 require __DIR__ . '/auth.php';

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import Checkbox from "@/Components/dump/Checkbox";
-import GuestLayout from "@/Layouts/dump/GuestLayout";
 import InputError from "@/Components/dump/InputError";
 import InputLabel from "@/Components/dump/InputLabel";
 import PrimaryButton from "@/Components/dump/PrimaryButton";
 import TextInput from "@/Components/dump/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
+import GeneralLayout from "@/Layouts/GeneralLayout";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,16 +27,18 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
+        <GeneralLayout>
             <Head title="Log in" />
 
-            {status && (
+            {/* {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">
                     {status}
                 </div>
-            )}
+            )} */}
 
-            <form onSubmit={submit}>
+            <h1 className="text-3xl text-center font-bold m-8">Login</h1>
+
+            <form onSubmit={submit} className="w-[400px]">
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
 
@@ -100,6 +102,6 @@ export default function Login({ status, canResetPassword }) {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+        </GeneralLayout>
     );
 }

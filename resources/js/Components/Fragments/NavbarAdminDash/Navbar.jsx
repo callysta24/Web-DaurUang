@@ -1,11 +1,12 @@
 import React from "react";
 import iconLogo from "@/Assets/icons/logo-dauruang.png";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 
-function Navbar() {
+function Navbar({ children }) {
+    const { component } = usePage();
+    const { auth } = usePage().props;
     return (
         <>
-            {/* <nav class="bg-white border-3 border-b-red-200 drop-shadow-sm sticky top-0 py-3"> */}
             <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 d">
                 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div class="relative flex h-16 items-center justify-between">
@@ -19,10 +20,18 @@ function Navbar() {
                                 />
                             </div>
                         </div>
+                        <h1
+                            // href="#"
+                            className="font-bold text-gray-500 hover:text-green-700 rounded-md px-2 pt-3 text-center"
+                            // aria-current="page"
+                        >
+                            Hola, {auth.user.name}
+                        </h1>
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
+                                <div className="flex space-x-4 pt-4">
                                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+
                                     <Link
                                         href="/dashboard"
                                         className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
@@ -37,7 +46,7 @@ function Navbar() {
                                     >
                                         Admin Dash
                                     </Link>
-                                    <Link
+                                    {/* <Link
                                         href="/voucher"
                                         className=" text-gray-500 hover:text-green-700 rounded-md px-2 py-2 text-base font-medium"
                                         aria-current="page"
@@ -50,7 +59,7 @@ function Navbar() {
                                         aria-current="page"
                                     >
                                         Nasabah
-                                    </Link>
+                                    </Link> */}
                                     <a
                                         href="/admindashboard"
                                         aria-current="page"
