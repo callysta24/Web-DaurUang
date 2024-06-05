@@ -1,32 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"; // Import library Axios
-import { InertiaLink } from "@inertiajs/inertia-react";
-import ModalTambah from "@/Sections/AdminHome/ModalKaca/ModalTambah";
+import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
-import ModalCreate from "./ModalCreate";
-import Create from "./Create";
+import { InertiaLink } from "@inertiajs/inertia-react";
 
-const Index = ({ wastes }) => {
-    // State untuk menyimpan data categories dari backend
-    const [categories, setCategories] = useState([]);
-
-    // Gunakan useEffect untuk mengambil data categories saat komponen dimount
-    useEffect(() => {
-        // Definisikan fungsi untuk mengambil data categories dari backend
-        const fetchCategories = async () => {
-            try {
-                const response = await axios.get("/api/waste-category"); // Ganti URL dengan URL yang sesuai dengan endpoint backend Anda
-                setCategories(response.data.data); // Simpan data categories ke state
-                console.log(response.data.data, "halo kategori");
-            } catch (error) {
-                console.error("Error fetching categories:", error);
-            }
-        };
-
-        // Panggil fungsi untuk mengambil data categories
-        fetchCategories();
-    }, []);
-
+const index = ({ wasteDeposits }) => {
+    // console.log(wasteDeposits);
     return (
         <>
             <section className="px-2 pb-5 pt-16 bg-teal-700 md:px-0 ">
@@ -45,13 +22,17 @@ const Index = ({ wastes }) => {
                                 </a>
                             </span>
                             <h5 className="text-2xl font-semibold tracking-tight text-white dark:text-white">
-                                List Kategori Waste
+                                List Deposit
                             </h5>
+                            <InertiaLink href="/wastes/create">
+                                Create Waste
+                            </InertiaLink>
+
                             <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                                <ModalCreate
+                                {/* <ModalCreate
                                     // categories={categories}
                                     categories={[]}
-                                />
+                                /> */}
                             </span>
                         </div>
                     </div>
@@ -64,16 +45,16 @@ const Index = ({ wastes }) => {
                                         <thead>
                                             <tr>
                                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                                                    Foto Limbah
+                                                    Tanggal Deposit
                                                 </th>
                                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                                                    Merk Produk
+                                                    Poin Deposit
                                                 </th>
                                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                                                    Berat Setor
+                                                    Nama Customer
                                                 </th>
                                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                                                    Poin / Kategori
+                                                    Waste (item setor)
                                                 </th>
                                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100">
                                                     ...
@@ -81,40 +62,31 @@ const Index = ({ wastes }) => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {wastes.map((waste) => (
-                                                <tr key={waste.id}>
+                                            {wasteDeposits.map((deposit) => (
+                                                <tr key={deposit.id}>
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                        {/* Ganti dengan tag img untuk menampilkan gambar */}
-                                                        <img
-                                                            src={
-                                                                waste.pic_waste
-                                                            }
-                                                            alt="Foto Limbah"
-                                                            className="w-10 h-10"
-                                                        />
+                                                        {deposit.date_deposit}
                                                     </td>
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                        {waste.merk_product}
+                                                        {
+                                                            deposit.poin_of_deposit
+                                                        }
                                                     </td>
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                        {waste.weight_waste}
+                                                        {deposit.id_customer}
                                                     </td>
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                        {waste.wasteCategory
-                                                            ? waste
-                                                                  .wasteCategory
-                                                                  .category_name
-                                                            : "No Category"}
+                                                        {deposit.id_waste}
                                                     </td>
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
                                                         <InertiaLink
-                                                            href={`/wastes/${waste.id}/edit`}
+                                                            href={`/waste/${wasteDeposits.id}/edit`}
                                                             className="btn btn-warning"
                                                         >
                                                             Edit
                                                         </InertiaLink>
                                                         <InertiaLink
-                                                            href={`/wastes/${waste.id}`}
+                                                            href={`/waste/${wasteDeposits.id}`}
                                                             className="btn btn-danger"
                                                             method="delete"
                                                             as="button"
@@ -136,4 +108,4 @@ const Index = ({ wastes }) => {
     );
 };
 
-export default Index;
+export default index;

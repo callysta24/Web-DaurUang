@@ -12,12 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('wastes', function (Blueprint $table) {
-            $table->id();
-            $table->string("pic_waste");
-            $table->string("merk_product");
-            $table->integer("weight_waste");
-            $table->foreignId("id_wc")->constrained('waste_categories')->onDelete('cascade');
+            $table->id('id_waste');
+            $table->string('pic_waste');
+            $table->string('merk_product');
+            $table->integer('weight_waste');
+            $table->unsignedBigInteger('id_wc'); // Pastikan ini unsignedBigInteger
             $table->timestamps();
+
+            // Menambahkan foreign key constraint
+            $table->foreign('id_wc')->references('id_wc')->on('waste_categories')->onDelete('cascade');
         });
     }
 

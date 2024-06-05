@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 // use App\Http\Controllers\UserController as ControllersUserController;
@@ -9,6 +10,7 @@ use Inertia\Inertia;
 
 use App\Http\Controllers\WasteController;
 use App\Http\Controllers\WasteCategoryController;
+use App\Http\Controllers\WasteDepositController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ use App\Http\Controllers\WasteCategoryController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Dashboard', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -30,9 +32,14 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+
+//     return Inertia::render('Dashboard');
+// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -61,15 +68,28 @@ Route::get('/artikel', function () {
     return Inertia::render('Blog/Artikel');
 })->name('Artikel');
 
-// route admin list kaca
-Route::get('/kaca', function () {
-    return Inertia::render('AdminDashboard/ListKaca');
-})->name('ListKaca');
+// // route admin list kaca
+// Route::get('/kaca', function () {
+//     return Inertia::render('AdminDashboard/ListKaca');
+// })->name('ListKaca');
+
+// // route admin waste 
+// Route::get('/wastes', function () {
+//     return Inertia::render('AdminDashboard/CRUD/Wastes');
+// })->name('Waste');
+
+// route untuk yg ada backend nya
+Route::resource('waste', WasteController::class);
+Route::resource('waste-deposit', WasteDepositController::class);
+Route::resource('customer', CustomerController::class);
+
+// Rute untuk halaman web
+Route::get('/waste-categories', [WasteCategoryController::class, 'index']);
+
+// Rute untuk API
+Route::get('/api/waste-categories', [WasteCategoryController::class, 'apiIndex']);
 
 
-// route
-Route::resource('wastes', WasteController::class);
-Route::resource('waste-categories', WasteCategoryController::class);
 
 
 require __DIR__ . '/auth.php';

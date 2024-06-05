@@ -5,21 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WasteCategory extends Model
+class Customer extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_wc';
+    protected $primaryKey = 'id_customer';
     public $incrementing = true;
     protected $keyType = 'int';
 
     protected $fillable = [
-        'category_name',
-        'poin_per_kg',
+        'name',
+        'email',
+        'address'
     ];
 
-    public function wastes()
+    public function deposits()
     {
-        return $this->hasMany(Waste::class, 'id_waste');
+        return $this->hasMany(WasteDeposit::class, 'id_wd');
     }
 }

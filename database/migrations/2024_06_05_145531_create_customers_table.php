@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('waste_categories', function (Blueprint $table) {
-            $table->id();
-            $table->string("category_name");
-            $table->integer('poin_per_kg');
+        Schema::create('customers', function (Blueprint $table) {
+            $table->id('id_customer');
+            $table->string('name');
+            $table->string('email');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('waste_categories');
+        Schema::dropIfExists('customers');
     }
 };
